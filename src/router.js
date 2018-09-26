@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import AirplaneModels from './views/AirplaneModels-Index.vue'
+import AirplaneModelsIndex from './views/AirplaneModels.index.vue'
+import AirplaneModelsView from './views/AirplaneModels.view.vue'
 
 Vue.use(Router)
 
@@ -22,8 +23,13 @@ export default new Router({
     },
     {
       path: '/airplanemodels',
-      name: 'airplanemodes',
-      component: AirplaneModels
+      name: 'airplaneModesIndex',
+      component: AirplaneModelsIndex
+    },
+    {
+      path: '/airplanemodels/:id',
+      name: 'airplaneModesView',
+      component: AirplaneModelsView
     }
   ]
 })

@@ -6,7 +6,7 @@
 
 <script>
 // @ is an alias to /src
-import AirplaneModels from '@/components/AirplaneModels.vue'
+import AirplaneModels from '@/components/AirplaneModels.index.vue'
 
 export default {
   name: 'index',

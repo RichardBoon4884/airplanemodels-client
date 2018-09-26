@@ -1,6 +1,6 @@
 <template>
     <div id="airplanemodels">
-        <div v-for="airplaneModel in airplaneModels" class="airplaneModel">
+        <div class="airplaneModel">
             <h2>{{ airplaneModel.brand }} {{ airplaneModel.series }}: {{ airplaneModel.aircraftManufacture }} {{ airplaneModel.aircraftType }} ({{ airplaneModel.aircraftAirliner }})</h2>
         </div>
     </div>
@@ -12,13 +12,13 @@ export default {
 
   data () {
     return {
-      airplaneModels: []
+      airplaneModel: null
     }
   },
 
   created () {
-    this.$http.get('http://localhost:8000/airplanemodels').then((data) => {
-      this.airplaneModels = data.body.slice(0, 10)
+    this.$http.get('http://localhost:8000/airplanemodels/' + this.$route.params.id).then((data) => {
+      this.airplaneModel = data.body
     })
   }
 }
