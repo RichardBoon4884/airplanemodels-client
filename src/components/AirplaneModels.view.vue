@@ -3,7 +3,7 @@
         <div class="airplaneModel">
             <h2>{{ airplaneModel.brand }} {{ airplaneModel.series }}: {{ airplaneModel.aircraftManufacture }} {{ airplaneModel.aircraftType }} ({{ airplaneModel.aircraftAirliner }})</h2>
         </div>
-        <a v-on:click="deleteAirplaneModel">Delete</a>
+        <button v-on:click="deleteAirplaneModel">Delete</button> | <router-link tag="button" :to="{ name: 'airplaneModesEdit', params: { id: this.$route.params.id }}">Edit</router-link>
     </div>
 </template>
 
