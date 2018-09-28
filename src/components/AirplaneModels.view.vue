@@ -3,6 +3,7 @@
         <div class="airplaneModel">
             <h2>{{ airplaneModel.brand }} {{ airplaneModel.series }}: {{ airplaneModel.aircraftManufacture }} {{ airplaneModel.aircraftType }} ({{ airplaneModel.aircraftAirliner }})</h2>
         </div>
+        <a v-on:click="deleteAirplaneModel">Delete</a>
     </div>
 </template>
 
@@ -15,11 +16,17 @@ export default {
       airplaneModel: null
     }
   },
-
   created () {
     this.$http.get('http://localhost:8000/airplanemodels/' + this.$route.params.id).then((data) => {
       this.airplaneModel = data.body
     })
+  },
+  methods: {
+    deleteAirplaneModel: function () {
+      this.$http.delete('http://localhost:8000/airplanemodels/' + this.$route.params.id).then((data) => {
+        console.log(data)
+      })
+    }
   }
 }
 </script>
