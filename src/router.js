@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import AirplaneModelsIndex from './views/AirplaneModels.index.vue'
 import AirplaneModelsView from './views/AirplaneModels.view.vue'
+import AirplaneModelsCreate from './views/AirplaneModels.create.vue'
 
 Vue.use(Router)
 
@@ -25,6 +26,11 @@ export default new Router({
       path: '/airplanemodels',
       name: 'airplaneModesIndex',
       component: AirplaneModelsIndex
+    },
+    {
+      path: '/airplanemodels/create',
+      name: 'airplaneModesCreate',
+      component: AirplaneModelsCreate
     },
     {
       path: '/airplanemodels/:id',
